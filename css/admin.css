@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+#studentsTable {
+    margin: 20px auto;
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 5px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Media Queries for Mobile First Design */
+@media (max-width: 767px) {
+    body {
+        padding: 10px;
+    }
+
+    #studentsTable {
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Media Queries for Desktop */
+@media (min-width: 768px) {
+    #studentsTable {
+        width: 80%;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}

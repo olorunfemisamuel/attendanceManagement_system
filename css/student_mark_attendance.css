@@ -1,0 +1,169 @@
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #555;
+}
+
+.custom-checkbox input {
+    width: 20px;
+    height: 20px;
+    accent-color: #007bff;
+    cursor: pointer;
+}
+
+.custom-checkbox label {
+    cursor: pointer;
+}
+
+/* Add hover effect */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Page Background */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+/* Centered Container */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+}
+
+/* Heading */
+h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Checkbox Container */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.button-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s;
+}
+
+.view-btn {
+    background-color: #007bff;
+}
+
+.view-btn:hover {
+    background-color: #0056b3;
+}
+
+.print-btn {
+    background-color: #28a745;
+}
+
+.print-btn:hover {
+    background-color: #1e7e34;
+}
+
+.submitattendance-btn {
+    background-color: #28a745;
+}
+
+.submitattendance-btn {
+    background-color: #007bff;
+}
+
+
+
+
+
+.custom-checkbox:hover {
+    color: #007bff;
+} */
+
+.btn-primary {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn-primary:first-of-type {
+    background-color: #007bff; /* Blue for View Attendance */
+    color: white;
+}
+
+.btn-primary:last-of-type {
+    background-color: #28a745; /* Green for Print Attendance */
+    color: white;
+}
+
+.btn-primary:hover {
+    opacity: 0.8;
+}
+
+/* Align buttons properly */
+.button-container {
+    display: flex;
+    gap: 15px;
+}
