@@ -7,26 +7,22 @@ $login_err = "";
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = trim($_POST["name"]);
     $email = trim($_POST["email"]);
     $password = trim($_POST["password"]);
 
     // Ensure email exists
-    $stmt = $conn->prepare("SELECT id, name, email, password FROM admins WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id, name, email, password FROM admins WHERE email = ? AND name = ?");
     if (!$stmt) {
         die("SQL Error: " . $conn->error);
     }
-    $stmt->bind_param("s", $email);
+    $stmt->bind_param("ss", $email, $name);
     $stmt->execute();
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        echo "Email found in database!<br>";
-
         $stmt->bind_result($id, $admin_name, $admin_email, $hashed_password);
         $stmt->fetch();
-
-        // Debugging: Print hashed password
-        echo "Stored Hash: " . $hashed_password . "<br>";
 
         // Check if password matches
         if (password_verify($password, $hashed_password)) {
@@ -34,21 +30,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['admin_name'] = $admin_name;
             $_SESSION['admin_email'] = $admin_email;
 
-            echo "Login successful!";
             header("Location: admin.php");
             exit();
         } else {
             $login_err = "Invalid password.";
         }
     } else {
-        $login_err = "No account found with that email.";
+        $login_err = "No account found with that name and email.";
     }
 
     $stmt->close();
 }
 
 $conn->close();
-
 ?>
 
 <!DOCTYPE html>

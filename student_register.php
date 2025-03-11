@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->num_rows > 0) {
         // Email is already registered
-        echo "This email is already registered. Please use a different email.";
+        echo "<script>alert('This email is already registered. Please use a different email.');</script>";
     } else {
         // Check if the password is already in use
         $stmt = $conn->prepare("SELECT id FROM users WHERE password = ?");
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($stmt->num_rows > 0) {
             // Password is already in use
-            echo "This password is already in use. Please use a different password.";
+            echo "<script>alert('This password is already in use. Please use a different password.');</script>";
         } else {
             $role = "student"; // Default role
 
@@ -37,8 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bind_param("ssss", $name, $email, $hashed_password, $role);
 
             if ($stmt->execute()) {
-                // Redirect to sign-in page after successful registration
-                header("Location: sign_in.php");
+                // Display alert and redirect to sign-in page after successful registration
+                echo "<script>alert('You have been successfully registered.'); window.location.href='sign_in.php';</script>";
                 exit();
             } else {
                 echo "Error: " . $conn->error;
