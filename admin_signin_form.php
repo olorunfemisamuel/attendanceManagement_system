@@ -52,23 +52,38 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Sign In</title>
     <link rel="stylesheet" href="css/admin_signin_form.css">
+    <style>
+        .password-container {
+            position: relative;
+        }
+        .password-container input {
+            width: calc(100% - 40px);
+        }
+        .password-container .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" name="name" id="name" class="form-control" value="<?php echo htmlspecialchars($name); ?>" required>
-            
         </div>
         <div class="form-group">
             <label for="email">Email</label>
             <input type="email" name="email" id="email" class="form-control" value="<?php echo htmlspecialchars($email); ?>" required>
-        
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control" required>
-            
+            <div class="password-container">
+                <input type="password" name="password" id="password" class="form-control" required>
+                <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
+            </div>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Sign In</button>
@@ -76,5 +91,13 @@ $conn->close();
         </div>
         <span class="error"><?php echo $login_err; ?></span>
     </form>
+
+    <script>
+        function togglePassword(fieldId) {
+            const field = document.getElementById(fieldId);
+            const type = field.getAttribute('type') === 'password' ? 'text' : 'password';
+            field.setAttribute('type', type);
+        }
+    </script>
 </body>
 </html>

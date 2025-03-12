@@ -31,14 +31,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
     <link rel="stylesheet" href="css/sign_in.css">
+    <style>
+        .password-container {
+            position: relative;
+        }
+        .password-container input {
+            width: calc(100% - 40px);
+        }
+        .password-container .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <form class="form-group" action="authenticate.php" method="post">
         <label for="email">Email</label>
         <input type="email" name="email" id="email" class="form-control" required>
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" class="form-control" required>
+        <div class="password-container">
+            <input type="password" name="password" id="password" class="form-control" required>
+            <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
+        </div>
         <button type="submit" class="btn btn-primary">Sign In</button>
     </form> 
+
+    <script>
+        function togglePassword(fieldId) {
+            const field = document.getElementById(fieldId);
+            const type = field.getAttribute('type') === 'password' ? 'text' : 'password';
+            field.setAttribute('type', type);
+        }
+    </script>
 </body>
 </html>
