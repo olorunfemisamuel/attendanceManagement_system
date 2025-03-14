@@ -1,5 +1,5 @@
 <?php
-include "config.php";
+include "../connection/config.php";
 session_start();
 
 $name = $email = $password = "";
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['admin_name'] = $admin_name;
             $_SESSION['admin_email'] = $admin_email;
 
-            header("Location: admin.php");
+            header("Location: ../admin/admin.php");
             exit();
         } else {
             $login_err = "Invalid password.";
@@ -51,7 +51,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Sign In</title>
-    <link rel="stylesheet" href="css/admin_signin_form.css">
+    <link rel="stylesheet" href="../css/admin_signin_form.css">
     <style>
         .password-container {
             position: relative;

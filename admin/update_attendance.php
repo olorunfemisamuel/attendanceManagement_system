@@ -1,5 +1,5 @@
 <?php
-include "config.php"; // Include your database connection
+include "../connection/config.php"; // Include your database connection
 
 if (isset($_GET['id']) && isset($_GET['status'])) {
     $studentId = $_GET['id'];

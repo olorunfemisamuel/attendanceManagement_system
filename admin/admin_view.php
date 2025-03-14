@@ -1,5 +1,5 @@
 <?php
-include "config.php"; // Include the database connection
+include "../connection/config.php"; // Include the database connection
 
 // Fetch attendance records
 $query = "SELECT a.id, u.name, a.date, a.ip_address, a.status FROM attendance a JOIN users u ON a.user_id = u.id";

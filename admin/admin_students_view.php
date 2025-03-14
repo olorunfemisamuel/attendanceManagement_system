@@ -1,5 +1,5 @@
 <?php
-include "config.php"; // Include the database connection
+include "../connection/config.php"; // Include the database connection
 
 // Fetch all registered students
 $query = "SELECT id, name, email FROM users WHERE role = 'student'";

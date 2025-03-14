@@ -1,5 +1,5 @@
 <?php
-include "config.php"; // Include the database connection
+include "../connection/config.php"; // Include the database connection
 
 // $id = $_GET['id'];
 

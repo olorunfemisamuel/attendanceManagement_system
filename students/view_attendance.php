@@ -1,10 +1,10 @@
 <?php
 session_start();
-include "config.php"; // Include the database connection
+include "../connection/config.php"; // Include the database connection
 
 // Check if the student is logged in
 if (!isset($_SESSION['id'])) {
-    header("Location: sign_in.php");
+    header("Location: students/sign_in.php");
     exit();
 }
 
@@ -31,7 +31,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Attendance</title>
-    <link rel="stylesheet" href="css/view_attendance.css">
+    <link rel="stylesheet" href="../css/view_attendance.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script>
         function printAttendance() {

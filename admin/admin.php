@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Attendance View</title>
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="../css/admin.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script>
         function fetchAttendance() {
@@ -118,6 +118,6 @@
     <h2>Attendance Records</h2>
     <div id="attendanceTable"></div>
     <button onclick="printAttendance()">Print Attendance</button>
-    <button onclick="window.location.href='admin_registered_students.php'">Registered Students</button>
+    <button onclick="window.location.href='../admin/admin_registered_students.php'">Registered Students</button>
 </body>
 </html>

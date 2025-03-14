@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include "config.php"; // Include the database connection
+include "../connection/config.php"; // Include the database connection
 
 date_default_timezone_set('Africa/Lagos'); // Set your timezone
 
@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['mark_attendance'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attendance System</title>
-    <link rel="stylesheet" href="css/student_mark_attendance.css">
+    <link rel="stylesheet" href="../css/student_mark_attendance.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script>
         function enableSubmitButton() {

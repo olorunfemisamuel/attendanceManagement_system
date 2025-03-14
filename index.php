@@ -19,8 +19,8 @@
         
         <!-- <h2>for LDC 2025</h2> -->
         <ul>
-            <li><a href="admin_signin_form.php">Admin</a></li>
-            <li><a href="students.php">Students</a></li>
+            <li><a href="admin/admin_signin_form.php">Admin</a></li>
+            <li><a href="students/students.php">Students</a></li>
         </ul>
     </div>
    

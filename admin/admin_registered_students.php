@@ -1,5 +1,5 @@
 <?php
-include "config.php"; // Database connection
+include "../connection/config.php"; // Database connection
 
 // Fetch all registered students
 $query = "SELECT id, name, email, status FROM users WHERE role = 'student'";
@@ -23,7 +23,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registered Students</title>
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
     <h2>Registered Students</h2>
