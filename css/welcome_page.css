@@ -1,30 +1,68 @@
 /* General Styles */
-body {
-    font-family: 'Poppins', Arial, sans-serif;
-    background-color: #1a1a1a;
-    color: #fff;
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333; /* Adjust background color */
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    text-align: center;
+    height: 100vh; /* Full viewport height */
+    width: 100vw;
+    overflow: hidden; /* Prevents scrolling */
 }
+/* body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color:#222; 
+    color: #ffffff; 
+    margin: 0;
+    padding: 0;
+    text-align: center;
+} */
 
 /* Container */
-.container {
-    background: #2c2c2c;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    width: 90%;
-    max-width: 400px;
-    transition: all 0.3s ease-in-out;
-}
+/* .container {
+    width: 105%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    background-color: #222;
+} */
 
-.container:hover {
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+/* .container {
+    width: 100%;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #333; 
+    padding: 20px;
+} */
+
+
+.container {
+    width: 90%; 
+    max-width: 400px;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 /* Logo */
@@ -71,35 +109,89 @@ ul li a:hover {
     box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
     transform: translateY(-3px);
 }
-
-/* Responsive Design */
-@media (max-width: 767px) {
+@media (max-width: 320px) {
     .container {
-        padding: 20px;
-        max-width: 95%;
+        width: 95%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+
+    .logo {
+        max-width: 80px;
+    }
+
+    ul li a {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+
+/* Small Phones (320px - 480px) */
+@media (min-width: 321px) and (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 100px 15px 15px 15px;
+       margin: auto;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .logo {
+        max-width: 90px;
+    }
+
+    ul li a {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+}
+
+/* Medium Phones (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .container {
+        width: 80%;
+        max-width: 500px;
+        padding: 25px;
     }
 
     h1 {
         font-size: 20px;
     }
 
-    ul li a {
-        padding: 12px;
-        font-size: 14px;
-    }
-}
-
-@media (min-width: 768px) {
-    .container {
-        max-width: 500px;
-    }
-
-    h1 {
-        font-size: 28px;
+    .logo {
+        max-width: 100px;
     }
 
     ul li a {
-        padding: 18px;
+        padding: 14px 18px;
         font-size: 16px;
     }
 }
+
+/* Larger Screens (Tablets & Desktops) */
+@media (min-width: 768px) {
+    .container {
+        width: 60%;
+        max-width: 600px;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .logo {
+        max-width: 120px;
+    }
+
+    ul li a {
+        padding: 16px 20px;
+        font-size: 18px;
+    }
+}
+

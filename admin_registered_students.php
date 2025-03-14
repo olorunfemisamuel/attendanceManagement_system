@@ -43,7 +43,7 @@ $conn->close();
                     <span id="status-<?php echo $student['id']; ?>">
                         <?php if ($student['status'] == 'present'): ?>
                             <span style="color: green;">&#10004; Present</span>
-                        <?php else: ?>
+                        <?php elseif ($student['status'] == 'absent'): ?>
                             <span style="color: red;">&#10060; Absent</span>
                         <?php endif; ?>
                     </span>
@@ -51,6 +51,7 @@ $conn->close();
                 <td>
                     <button onclick="markAttendance(<?php echo $student['id']; ?>, 'present')">Mark Present</button>
                     <button onclick="markAttendance(<?php echo $student['id']; ?>, 'absent')">Mark Absent</button>
+                    <button onclick="markAttendance(<?php echo $student['id']; ?>, 'not marked')">Not marked</button>
                 </td>
             </tr>
             <?php endforeach; ?>
