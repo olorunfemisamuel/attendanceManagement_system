@@ -64,7 +64,7 @@
     </style>
 </head>
 <body>
-    <form class="form-group" action="/students/student_register.php" method="post" onsubmit="return validateForm()">
+    <form class="form-group" action="sign_in.php" method="post" onsubmit="return validateForm()">
         <label for="name">Full Name</label>
         <input type="text" name="name" id="name" class="form-control" required>
         <label for="email">Email</label>

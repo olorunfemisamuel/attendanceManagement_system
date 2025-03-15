@@ -87,7 +87,7 @@ $conn->close();
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Sign In</button>
-            <button type="button" class="btn btn-secondary" onclick="window.location.href='index.php'">Back</button>
+            <button type="button" class="btn btn-secondary" onclick="window.location.href='../index.php'">Back</button>
         </div>
         <span class="error"><?php echo $login_err; ?></span>
     </form>
