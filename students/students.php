@@ -81,7 +81,7 @@
         </div>
         <span class="error" id="password_error"></span>
         <button type="submit" class="btn btn-primary">Register</button>
-        <button type="button" class="btn btn-secondary" onclick="window.location.href='sign_in.php'">Sign In</button>
+        <button type="button" class="btn btn-secondary" onclick="window.location.href='students/sign_in.php'">Sign In</button>
     </form> 
 
     <script>
