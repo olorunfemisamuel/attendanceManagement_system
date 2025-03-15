@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($stmt->execute()) {
                 // Display alert and redirect to sign-in page after successful registration
-                echo "<script>alert('You have been successfully registered.'); window.location.href='../students/sign_in.php';</script>";
+                echo "<script>alert('You have been successfully registered.'); window.location.href='students/sign_in.php';</script>";
                 exit();
             } else {
                 echo "Error: " . $conn->error;
