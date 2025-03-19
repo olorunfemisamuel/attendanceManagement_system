@@ -51,7 +51,7 @@ $conn->close();
                 <td>
                     <button onclick="markAttendance(<?php echo $student['id']; ?>, 'present')">Mark Present</button>
                     <button onclick="markAttendance(<?php echo $student['id']; ?>, 'absent')">Mark Absent</button>
-                    <button onclick="markAttendance(<?php echo $student['id']; ?>, 'not marked')">Not marked</button>
+                    <!-- <button onclick="markAttendance(<?php //echo $student['id']; ?>, 'not marked')">Not marked</button> -->
                 </td>
             </tr>
             <?php endforeach; ?>

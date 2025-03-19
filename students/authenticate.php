@@ -2,6 +2,12 @@
 
 include "../connection/config.php";
 
+
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error);
+// }
+// echo "Connection successful!<br>";
+
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -40,6 +46,73 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $conn->close();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error);
+// }
+// echo "Connection successful!<br>";
+
+// session_start();
+
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     $email = trim($_POST["email"]);
+//     $password = trim($_POST["password"]);
+
+//     $stmt = $conn->prepare("SELECT id, name, password FROM users WHERE email = ? AND role = 'student'");
+//     if ($stmt) {
+//         $stmt->bind_param("s", $email);
+//         $stmt->execute();
+//         $stmt->store_result();
+
+//         if ($stmt->num_rows > 0) {
+//             $stmt->bind_result($id, $name, $hashed_password);
+//             $stmt->fetch();
+
+//             if (password_verify($password, $hashed_password)) {
+//                 session_regenerate_id(true);
+//                 $_SESSION["id"] = $id;
+//                 $_SESSION["name"] = $name;
+//                 $_SESSION["email"] = $email;
+               
+//                 header("Location: students/sign_in.php");
+//                 exit();
+//             } else {
+//                 $error = "Invalid password.";
+
+//             }
+//         } else {
+//             $error = "No account found with that email.";
+//         }
+//         $stmt->close();
+//     } else {
+//         $error = "Database error. Please try again later.";
+//     }
+
+//     $conn->close();
+// }
+
 ?>
 
 <!DOCTYPE html>

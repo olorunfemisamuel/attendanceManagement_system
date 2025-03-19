@@ -1,6 +1,55 @@
 <?php
 
-// include 'config.php';
+include '../connection/config.php';
+
+
+session_start();
+
+$error = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = trim($_POST["email"]);
+    $input_password = trim($_POST["password"]);
+
+    $stmt = $conn->prepare("SELECT id, name, password FROM users WHERE email = ?");
+    if ($stmt) {
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $stmt->bind_result($id, $name, $hashed_password);
+        $stmt->fetch();
+        $stmt->close();
+
+        if (password_verify($input_password, $hashed_password)) {
+            session_regenerate_id(true); // Prevent session fixation
+            $_SESSION["id"] = $id;
+            $_SESSION["name"] = $name;
+            $_SESSION["email"] = $email;
+
+            header("Location: student_mark_attendance.php");
+            exit();
+        } else {
+            $error = "Invalid password.";
+        }
+    } else {
+        $error = "No account found with that email.";
+    }
+    $conn->close();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // $input_password = $_POST['password'];
 
@@ -14,10 +63,8 @@
 // if (password_verify($input_password, $hashed_password)) {
 //     echo "Password is correct!";
 // } else {
-//     echo "Invalid password.";
-// }
 
-//
+// }
 
 
 
